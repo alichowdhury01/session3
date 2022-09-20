@@ -1,3 +1,4 @@
-public class BiblioTab {
+public class BiblioTab extends Bibliotheque {
+
     
 }
