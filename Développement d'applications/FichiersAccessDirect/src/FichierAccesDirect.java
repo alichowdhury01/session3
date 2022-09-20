@@ -3,17 +3,21 @@
     Sur les fichiers  a accès aléatoire
 
 /********************************************************/
-
 import java.io.* ;
 //import java.util.* ;
 
-public class FichierAccesDirect
-    {
-    public static void main(String[] args) throws IOException
-        {
-        File fichier = new File("employe.txt") ;
+public class FichierAccesDirect {
+    public static void main(String[] args) throws IOException {
+        
 
+
+        
+        File fichier = new File("employe.txt") ;
+        //fichiers à accès direct utilise une stratégie de clés comme numéro d’employé pour éviter de faire des recherches séquentielles dans le fichier
+        
+        
         RandomAccessFile donnee = new RandomAccessFile(fichier, "rw") ;
+        
         int numero = 0 ;
         int choix = 0 ;
         int compteur = 1 ;
@@ -214,3 +218,6 @@ public class FichierAccesDirect
 
 
 
+// francois legault a profiter de la situation  pour dire pour jouer avec la vérité: Une toyota camry
+// 4 sur 6 ne sera pas toucher par la mesure 
+//
