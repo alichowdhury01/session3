@@ -1,11 +1,12 @@
-public class Livre {
+public class Livre extends Ouvrage {
     // Attributs
     private String auteur;
     private String titre;
     private String editeur;
 
     // Constructeur
-    public Livre(String auteur, String titre, String editeur) {
+    public Livre(String auteur, String titre, String editeur, String date, int cote) {
+        super(date, cote);
         this.auteur = auteur;
         this.titre = titre;
         this.editeur = editeur;
@@ -42,6 +43,6 @@ public class Livre {
     public String toString() {
         return "Livre{" + "auteur=" + auteur + ", titre=" + titre + ", editeur=" + editeur + '}';
     }
-    
+
     
 }
