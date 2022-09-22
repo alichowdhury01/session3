@@ -1,10 +1,12 @@
+import java.time.LocalDate;
+
 public class CD extends Ouvrage {
     // Attributs
     private String titre;
     private String auteur;
 
     // Constructeur
-    public CD(String titre, String auteur, String date, int cote) {
+    public CD(String titre, String auteur, LocalDate date, int cote) {
         super(date, cote);
         this.titre = titre;
         this.auteur = auteur;

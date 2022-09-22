@@ -1,38 +1,49 @@
-public class Ouvrage {
-    // Attribut
-    private String date;
-    private int cote;
+import java.time.LocalDate;
 
-    // Constructeur
-    public Ouvrage(String date, int cote) {
-        this.date = date;
-        this.cote = cote;
+public class Ouvrage {
+    // attributs d'instance
+    private LocalDate dateEmprunt;
+
+    // atributs de classe
+    private static int cote;
+
+    // constructeur
+    public Ouvrage(LocalDate date, int cote2) {
+        this.dateEmprunt = null;
         cote++;
     }
 
-    // Getters
-    public String getDate() {
-        return date;
+    // getters
+    public LocalDate getDateEmprunt() {
+        return dateEmprunt;
     }
 
-    public int getCote() {
+    public static int getCote() {
         return cote;
     }
 
-    // Setters
-    public void setDate(String date) {
-        this.date = date;
+    // setters
+    public void setDateEmprunt(LocalDate dateEmprunt) {
+        this.dateEmprunt = dateEmprunt;
     }
 
-    public void setCote(int cote) {
-        this.cote = cote;
+    public static void setCote(int cote) {
+        Ouvrage.cote = cote;
+    }
+
+    // abstract toString
+    @Override
+    public String toString() {
+        return "Ouvrage{" + "dateEmprunt=" + dateEmprunt + '}';
     }
 
     //toString
-    @Override
-    public String toString() {
-        return "Ouvrage{" + "date=" + date + ", cote=" + cote + '}';
+    public String toString(int cote) {
+        return "Ouvrage{" + "dateEmprunt=" + dateEmprunt + ", cote=" + cote + '}';
     }
+    
+
+
 
     
 }

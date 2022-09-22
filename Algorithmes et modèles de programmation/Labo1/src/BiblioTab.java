@@ -2,82 +2,48 @@ import java.util.LinkedList;
 
 public class BiblioTab extends Bibliotheque {
 
-    static LinkedList<Ouvrage> biblio;
-    
-   // class BiblioTab utilisera un tableau de longueur suffisante 20
-    public BiblioTab() {
-        biblio = new LinkedList<>();
+    // Attributs array
+    private Ouvrage[] listeOuvrages;
+
+    // Constructeur
+    public BiblioTab(String nom, int nbOuvrages) {
+        super(nom, nbOuvrages);
+        this.listeOuvrages = new Ouvrage[nbOuvrages];
     }
-    
-    // ajouter un ouvrage dans la bibliotheque
+
+    //toString
     @Override
-    public void ajouter(Ouvrage o) {
-        biblio.add(o);
+    public String toString() {
+        return "BiblioTab{" + "listeOuvrages=" + listeOuvrages + '}';
     }
-    
-    // supprimer un ouvrage de la bibliotheque
-    @Override
-    public void supprimer(Ouvrage o) {
-        biblio.remove(o);
-    }
-    
-    // afficher les ouvrages de la bibliotheque
-    @Override
-    public void afficher() {
-        for (Ouvrage ouvrage : biblio) {
-            System.out.println(ouvrage);
-        }
-    }
-    
-    // afficher les ouvrages d'un auteur
-    @Override
-    public void afficher(String auteur) {
-        for (Ouvrage ouvrage : biblio) {
-            if (ouvrage instanceof Livre) {
-                if (((Livre) ouvrage).getAuteur().equals(auteur)) {
-                    System.out.println(ouvrage);
-                }
-            }
-        }
-    }
-    
-    // afficher les ouvrages d'un editeur
-    @Override
-    public void afficherEditeur(String editeur) {
-        for (Ouvrage ouvrage : biblio) {
-            if (ouvrage instanceof Livre) {
-                if (((Livre) ouvrage).getEditeur().equals(editeur)) {
-                    System.out.println(ouvrage);
-                }
-            }
-        }
-    }
-    
-    // afficher les ouvrages d'un titre
-    @Override
-    public void afficherTitre(String titre) {
-        for (Ouvrage ouvrage : biblio) {
-            if (ouvrage instanceof Livre) {
-                if (((Livre) ouvrage).getTitre().equals(titre)) {
-                    System.out.println(ouvrage);
-                }
-            }
-        }
-    }
-    
-    // afficher les ouvrages d'un titre et d'un auteur
-    @Override
-    public void afficher(String titre, String auteur) {
-        for (Ouvrage ouvrage : biblio) {
-            if (ouvrage instanceof Livre) {
-                if (((Livre) ouvrage).getTitre().equals(titre) && ((Livre )ouvrage).getAuteur().equals(auteur)) {
-                    System.out.println(ouvrage);
-                }
+
+    // méthodes ajout
+    public void ajoute(Ouvrage o) {
+        for (int i = 0; i < listeOuvrages.length; i++) {
+            if (listeOuvrages[i] == null) {
+                listeOuvrages[i] = o;
+                break;
             }
         }
     }
 
+    //supprime
+    public void supprime(Ouvrage o) {
+        for (int i = 0; i < listeOuvrages.length; i++) {
+            if (listeOuvrages[i] == o) {
+                listeOuvrages[i] = null;
+                break;
+            }
+        }
+    }
 
-
-
+    //recherche
+    public Ouvrage recherche(int cote) {
+        for (int i = 0; i < listeOuvrages.length; i++) {
+            if (listeOuvrages[i].getCote() == cote) {
+                return listeOuvrages[i];
+            }
+        }
+        return null;
+    }
 }
