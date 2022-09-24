@@ -37,21 +37,7 @@ public class GestionBibliotheque {
     public static void main(String[] args) {
 
         
-        // demandé à l'utilisateur de choisir le type de bibliothèque
-        Scanner userInput = new Scanner(System.in);
-        System.out.println("Veuillez choisir le type de bibliothèque :");
-        System.out.println("1 - Liste");
-        System.out.println("2 - Tableau");
-        System.out.println("3 - Fichier texte");
-        System.out.println("4 - Fichier binaire");
-        System.out.println("5 - Base de données");
-        System.out.println("6 - Quitter");
 
-        // input de l'utilisateur pour le choix de la bibliothèque à utiliser 
-        String choix = userInput.nextLine();
-
-        // switch pour le choix de la bibliothèque
-    
     }
     
 }
