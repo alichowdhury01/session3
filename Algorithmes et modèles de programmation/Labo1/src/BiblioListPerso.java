@@ -1,36 +1,24 @@
 import java.util.LinkedList;
 
 public class BiblioListPerso extends Bibliotheque {
-    // Attributs maBiblioListPerso ouvrages ListeChainee
-    private ListChainee listeOuvrages;
 
-    // Constructeur
-    public BiblioListPerso(String nom, int nbOuvrages) {
-        super(nom, nbOuvrages);
-        this.listeOuvrages = new ListChainee();
-    }
-
-    // toString
     @Override
-    public String toString() {
-        return "BiblioListPerso{" + "listeOuvrages=" + listeOuvrages + '}';
+    public void ajouter(Ouvrage o) {
+        // TODO Auto-generated method stub
+        
     }
 
-    // ajoute
-    public void ajoute(Ouvrage o) {
-        listeOuvrages.add(o);
+    @Override
+    public void supprimer(Ouvrage o) {
+        // TODO Auto-generated method stub
+        
     }
 
-    // supprime
-    public void supprime(Ouvrage o) {
-        listeOuvrages.remove(o);
+    @Override
+    public void rechercher(Ouvrage o) {
+        // TODO Auto-generated method stub
+        
     }
-
-    // recherche
-    public Ouvrage recherche(int cote) {
-        return listeOuvrages.recherche(cote);
-    }
-
 
 
     

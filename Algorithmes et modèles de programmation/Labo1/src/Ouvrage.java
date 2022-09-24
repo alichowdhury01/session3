@@ -1,49 +1,61 @@
 import java.time.LocalDate;
 
-public class Ouvrage {
-    // attributs d'instance
-    private LocalDate dateEmprunt;
+public abstract class Ouvrage {
 
-    // atributs de classe
-    private static int cote;
+    // Attributs
+    private LocalDate date;
+    private int cote;
+    private String auteur;
+    private String titre;
 
-    // constructeur
-    public Ouvrage(LocalDate date, int cote2) {
-        this.dateEmprunt = null;
-        cote++;
+
+    // Constructeur
+    public Ouvrage(LocalDate date, int cote, String auteur, String titre) {
+        this.titre = titre;
+        this.auteur = auteur;
+        this.date = date;
+        this.cote = cote;
     }
 
-    // getters
-    public LocalDate getDateEmprunt() {
-        return dateEmprunt;
+    // Getters
+    public LocalDate getDate() {
+        return date;
     }
 
-    public static int getCote() {
+    public int getCote() {
         return cote;
     }
 
-    // setters
-    public void setDateEmprunt(LocalDate dateEmprunt) {
-        this.dateEmprunt = dateEmprunt;
+    public String getAuteur() {
+        return auteur;
     }
 
-    public static void setCote(int cote) {
-        Ouvrage.cote = cote;
+    public String getTitre() {
+        return titre;
     }
 
-    // abstract toString
+    // Setters
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public void setCote(int cote) {
+        this.cote = cote;
+    }
+
+    public void setAuteur(String auteur) {
+        this.auteur = auteur;
+    }       
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    // toString
     @Override
     public String toString() {
-        return "Ouvrage{" + "dateEmprunt=" + dateEmprunt + '}';
+        return "Ouvrage{" + "date=" + date + ", cote=" + cote + ", auteur=" + auteur + ", titre=" + titre + '}';
     }
-
-    //toString
-    public String toString(int cote) {
-        return "Ouvrage{" + "dateEmprunt=" + dateEmprunt + ", cote=" + cote + '}';
-    }
-    
-
-
 
     
 }

@@ -7,7 +7,7 @@ public class CD extends Ouvrage {
 
     // Constructeur
     public CD(String titre, String auteur, LocalDate date, int cote) {
-        super(date, cote);
+        super(date, cote, auteur, titre);
         this.titre = titre;
         this.auteur = auteur;
     }
@@ -30,9 +30,11 @@ public class CD extends Ouvrage {
         this.auteur = auteur;
     }
 
-    // toString
+    // toString 
     @Override
     public String toString() {
-        return "CD{" + "titre=" + titre + ", auteur=" + auteur + '}';
+        return "CD{" + "titre=" + titre + ", auteur=" + auteur + "}\n" + super.toString();
     }
+
+
 }

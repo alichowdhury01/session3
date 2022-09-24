@@ -1,11 +1,14 @@
-public class Periodique {
+import java.time.LocalDate;
+
+public class Periodique extends Ouvrage {
     // Attributs
     private String nom;
     private int numero;
     private String periodicite;
 
     // Constructeur
-    public Periodique(String nom, int numero, String periodicite) {
+    public Periodique(String nom, int numero, String periodicite, LocalDate date, int cote, String auteur, String titre) {
+        super(date, cote, auteur, titre);
         this.nom = nom;
         this.numero = numero;
         this.periodicite = periodicite;
@@ -40,7 +43,7 @@ public class Periodique {
     // toString
     @Override
     public String toString() {
-        return "Periodique{" + "nom=" + nom + ", numero=" + numero + ", periodicite=" + periodicite + '}';
+        return "Periodique{" + "nom=" + nom + ", numero=" + numero + ", periodicite=" + periodicite + "}\n" + super.toString();
     }
-    
+
 }
