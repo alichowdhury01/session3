@@ -1,13 +1,10 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.time.LocalDate;
+import java.util.Arrays;
 
 public class BiblioTab extends Bibliotheque {
 
     // attributs
-    private Ouvrage[] bibliotheque;
-    private int nbOuvrages;
+    private Ouvrage[] bibliotheque; // tableau d'ouvrages
+    private int nbOuvrages; // nombre d'ouvrages dans la bibliothèque
 
     // constructeur
     public BiblioTab() {
@@ -16,8 +13,7 @@ public class BiblioTab extends Bibliotheque {
     }
 
     // méthodes abstraites de la classe mère Bibliotheque implémentées dans la classe fille BiblioTab
-   
-
+    // Ajouter un ouvrage
     @Override
     public void ajouter(Ouvrage o) {
         //si la bibliotheque est pleine on affiche un message d'erreur
@@ -31,6 +27,7 @@ public class BiblioTab extends Bibliotheque {
 
     }
 
+    // Supprimer un ouvrage
     @Override
     public void supprimer(Ouvrage o) {
         //on parcourt la bibliotheque
@@ -49,6 +46,7 @@ public class BiblioTab extends Bibliotheque {
         }
     }
 
+    // Rechercher un ouvrage
     @Override
     public void rechercher(Ouvrage o) {
         //on parcourt la bibliotheque
@@ -68,6 +66,12 @@ public class BiblioTab extends Bibliotheque {
         for (int i = 0; i < this.nbOuvrages; i++) {
             System.out.println(this.bibliotheque[i]);
         }
+    }
+
+    //toString
+    @Override
+    public String toString() {
+        return "BiblioTab [bibliotheque=" + Arrays.toString(bibliotheque) + ", nbOuvrages=" + nbOuvrages + "]";
     }
 
 

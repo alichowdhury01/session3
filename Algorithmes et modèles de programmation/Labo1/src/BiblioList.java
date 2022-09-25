@@ -26,11 +26,10 @@ public class BiblioList extends Bibliotheque {
         }
     }
 
-    // Afficher la bibliothèque
-    public void afficher() {
-        for (Ouvrage o : bibliotheque) {
-            System.out.println(o);
-        }
+    //toString
+    @Override
+    public String toString() {
+        return "BiblioList [bibliotheque=" + bibliotheque + "]";
     }
 
     
