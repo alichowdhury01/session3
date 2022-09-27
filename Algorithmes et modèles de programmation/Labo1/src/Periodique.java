@@ -2,16 +2,17 @@ import java.time.LocalDate;
 
 public class Periodique extends Ouvrage {
     // Attributs
-    private String nom;
+    private String nom, periodicite;
     private int numero;
-    private String periodicite;
 
     // Constructeur
-    public Periodique(String nom, int numero, String periodicite, LocalDate date, int cote, String auteur, String titre) {
-        super(date, cote, auteur, titre);
+    Periodique() {}
+
+    Periodique(String auteur, String titre, String nom, String periodicite, int numero, LocalDate dateEmprunt, int cote) {
+        super(dateEmprunt, cote, auteur, titre);
         this.nom = nom;
-        this.numero = numero;
         this.periodicite = periodicite;
+        this.numero = numero;
     }
 
     // Getters

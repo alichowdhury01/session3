@@ -1,42 +1,36 @@
 import java.time.LocalDate;
-import java.util.Scanner;
+
 
 public class GestionBibliotheque {
-
-    //fichier text
-    final static String FICHIER = "src/donnees/bibliotheque.txt";
-    //fichier binaire
-    final static String FICHIERB = "src/donnees/bibliotheque.dat";
-
-    //methode creerBibliotheque
-    public static Bibliotheque creerBibliotheque() {
-        Bibliotheque bibliotheque = new BiblioListPerso();
-        return bibliotheque;
-    }
-
-    //methode ajouterOuvrage
-    public static void ajouterOuvrage(Bibliotheque bibliotheque) {
-        Ouvrage o = new Livre("auteur", "titre", "editeur", LocalDate.now(), 1);
-        bibliotheque.ajouter(o);
-    }
-
-    //methode supprimerOuvrage
-    public static void supprimerOuvrage(Bibliotheque bibliotheque) {
-        Ouvrage o = new Livre("auteur", "titre", "editeur", LocalDate.now(), 1);
-        bibliotheque.supprimer(o);
-    }
-
-    //methode rechercherOuvrage
-    public static void rechercherOuvrage(Bibliotheque bibliotheque) {
-        Ouvrage o = new Livre("auteur", "titre", "editeur", LocalDate.now(), 1);
-        bibliotheque.rechercher(o);
-    }
 
 
     // main method
     public static void main(String[] args) {
 
-        
+        // create object of BiblioListPerso
+        BiblioListPerso biblioListPerso = new BiblioListPerso();
+
+        // create object of BiblioList
+        BiblioList biblioList = new BiblioList();
+
+        // create object of BiblioTab
+        BiblioTab biblioTab = new BiblioTab();
+
+        // create object of Ouvrage
+        Ouvrage ouvrage = new Ouvrage(LocalDate.now(), 1, "auteur", "titre") {
+        };
+
+        // add ouvrage to biblioListPerso
+        biblioListPerso.ajouter(ouvrage);
+
+        // add ouvrage to biblioList
+        biblioList.ajouter(ouvrage);
+
+        // add ouvrage to biblioTab
+        biblioTab.ajouter(ouvrage);
+
+        // search ouvrage in biblioListPerso
+        biblioListPerso.rechercher(ouvrage);
 
     }
     

@@ -1,40 +1,37 @@
 import java.time.LocalDate;
 
 public class CD extends Ouvrage {
-    // Attributs
-    private String titre;
-    private String auteur;
 
     // Constructeur
-    public CD(String titre, String auteur, LocalDate date, int cote) {
-        super(date, cote, auteur, titre);
-        this.titre = titre;
-        this.auteur = auteur;
+    CD() {}
+
+    CD(String titre, String auteur, LocalDate dateEmprunt, int cote) {
+        super(dateEmprunt, cote, auteur, titre);
+    
     }
 
     // Getters
     public String getTitre() {
-        return titre;
+        return super.getTitre();
     }
 
     public String getAuteur() {
-        return auteur;
+        return super.getAuteur();
     }
 
     // Setters
     public void setTitre(String titre) {
-        this.titre = titre;
+        super.setTitre(titre);
     }
 
     public void setAuteur(String auteur) {
-        this.auteur = auteur;
+        super.setAuteur(auteur);
     }
 
     // toString 
     @Override
     public String toString() {
-        return "CD{" + "titre=" + titre + ", auteur=" + auteur + "}\n" + super.toString();
+        return "CD{" + super.toString() + '}';
     }
-
 
 }

@@ -3,23 +3,24 @@ import java.time.LocalDate;
 public abstract class Ouvrage {
 
     // Attributs
-    private LocalDate date;
+    private LocalDate dateEmprunt;
     private int cote;
-    private String auteur;
-    private String titre;
+    private String auteur, titre;
 
 
     // Constructeur
-    public Ouvrage(LocalDate date, int cote, String auteur, String titre) {
+    Ouvrage() {}
+
+    Ouvrage(LocalDate dateEmprunt, int cote, String auteur, String titre) {
         this.titre = titre;
         this.auteur = auteur;
-        this.date = date;
+        this.dateEmprunt = dateEmprunt;
         this.cote = cote;
     }
 
     // Getters
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getDateEmprunt() {
+        return dateEmprunt;
     }
 
     public int getCote() {
@@ -35,8 +36,8 @@ public abstract class Ouvrage {
     }
 
     // Setters
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setDateEmprunt(LocalDate dateEmprunt) {
+        this.dateEmprunt = dateEmprunt;
     }
 
     public void setCote(int cote) {
@@ -45,7 +46,7 @@ public abstract class Ouvrage {
 
     public void setAuteur(String auteur) {
         this.auteur = auteur;
-    }       
+    }
 
     public void setTitre(String titre) {
         this.titre = titre;
@@ -54,8 +55,6 @@ public abstract class Ouvrage {
     // toString
     @Override
     public String toString() {
-        return "Ouvrage{" + "date=" + date + ", cote=" + cote + ", auteur=" + auteur + ", titre=" + titre + '}';
+        return "Ouvrage{" + "dateEmprunt=" + dateEmprunt + ", cote=" + cote + ", auteur=" + auteur + ", titre=" + titre + '}';
     }
-
-    
 }
