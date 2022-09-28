@@ -12,7 +12,7 @@ public class BiblioListPerso extends Bibliotheque {
         list.insertAtEnd(o);
     }
 
-    // Supprimer un ouvrage
+    // Supprimer un ouvrage à une position donnée
     @Override
     public void supprimer(Ouvrage o) {
         list.deleteFromStart();
