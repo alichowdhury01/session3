@@ -1,5 +1,5 @@
 //import linkedlist.*;
-import java.util.*;
+import java.util.LinkedList;
 
 public class BiblioList extends Bibliotheque {
     LinkedList<Ouvrage> biblioList = new LinkedList<Ouvrage>();
