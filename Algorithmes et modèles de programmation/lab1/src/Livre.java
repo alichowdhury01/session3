@@ -2,12 +2,16 @@ import java.time.LocalDate;
 
 public class Livre extends Ouvrage {
     //Attributes
+    private String titre;
+    private String auteur;
     private String editeur;
 
     //Constructors
-    public Livre(int cote, String titre, String auteur, LocalDate dateEmprunt, String editeur) {
-        super(cote, titre, auteur, dateEmprunt);
-        this.editeur = editeur;
+    public Livre(String titre, String auteur, String editeur, LocalDate dateEmprunt) {
+        super(dateEmprunt);
+        this.setTitre(titre);
+        this.setAuteur(auteur);
+        this.setEditeur(editeur);
     }
 
     //Getters
@@ -23,12 +27,12 @@ public class Livre extends Ouvrage {
         return auteur;
     }
 
-    public LocalDate getDateEmprunt() {
-        return dateEmprunt;
-    }
-
     public String getEditeur() {
         return editeur;
+    }
+
+    public LocalDate getDateEmprunt() {
+        return dateEmprunt;
     }
 
     //Setters
@@ -44,16 +48,16 @@ public class Livre extends Ouvrage {
         this.auteur = auteur;
     }
 
-    public void setDateEmprunt(LocalDate dateEmprunt) {
-        this.dateEmprunt = dateEmprunt;
-    }
-
     public void setEditeur(String editeur) {
         this.editeur = editeur;
     }
 
+    public void setDateEmprunt(LocalDate dateEmprunt) {
+        this.dateEmprunt = dateEmprunt;
+    }
+
     //toString
     public String toString() {
-        return "cote : " + cote + ", titre : " + titre + ", auteur : " + auteur + ", dateEmprunt : " + dateEmprunt + ", editeur : " + editeur;
+        return "cote : " + cote + ",\ntitre : " + titre + ",\nauteur : " + auteur + ",\nediteur : " + editeur + ",\ndateEmprunt : " + dateEmprunt;
     }
 }

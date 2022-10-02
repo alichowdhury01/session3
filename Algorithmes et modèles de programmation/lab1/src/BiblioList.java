@@ -3,40 +3,76 @@ import java.util.LinkedList;
 
 public class BiblioList extends Bibliotheque {
     LinkedList<Ouvrage> biblioList = new LinkedList<Ouvrage>();
-    
-    //Methods ajouter from abstract class Bibliotheque 
+
+    @Override
     public void ajouter(Ouvrage o) {
+        
         biblioList.add(o);
     }
 
-    //Methods rechercher from abstract class Bibliotheque. Must search by cote in the list of Ouvrage objects, if found say it's found and return the object, if not found say it's not found and return null
 
-    public Ouvrage rechercher(int cote) {
-        for (Ouvrage o : biblioList) {
-            if (o.getCote() == cote) {
+
+    @Override
+    //recherche par cote avec linkedlist, si trouvé dire trouvé dire trouvé avec sa position dans la liste et retourner l'objet, si non trouvé dire non trouvé et retourner null
+    public Ouvrage recherche(int cote) {
+        for (int i = 0; i < biblioList.size(); i++) {
+            if (biblioList.get(i).getCote() == cote) {
+                //afficher la position de l'ouvrage dans la liste et dire trouvé tous les informations de l'ouvrage tel que titre, auteur, cote, éditeur
+                System.out.println("L'ouvrage avec la cote " + biblioList.get(i).getCote() + " a été trouvé à la position " + i + " dans la liste" + "\n" + biblioList.get(i)); 
+                return biblioList.get(i);
+            }
+        }
+        for (Ouvrage ouvrage : biblioList) {
+            if (ouvrage.getCote() == cote) {
                 System.out.println("Found");
-                return o;
+                return ouvrage;
             }
         }
         System.out.println("Not found");
         return null;
     }
 
-    //Methods supprimer from abstract class Bibliotheque. Must search by cote in the list of Ouvrage objects, if found say it's found and object has been  deleted with the cote. remove it from the list, if not found say it's not found and return null
-    public Ouvrage supprimer(int cote) {
-        for (Ouvrage o : biblioList) {
-            if (o.getCote() == cote) {
-                System.out.println("Found and book with cote " + o + " has been deleted");
-                biblioList.remove(o);
-                return o;
+    //@Override
+    //public Ouvrage supprimer(Ouvrage o) {
+    //    // recherche par cote avec linkedlist, si trouvé dire trouvé et supprimer l'objet, si non trouvé dire non trouvé et retourner null
+    //    for (Ouvrage ouvrage : biblioList) {
+    //        if (ouvrage.getCote() == o.getCote()) {
+    //            System.out.println("Found and book with cote " + ouvrage + " has been deleted");
+    //            biblioList.remove(ouvrage);
+    //            return ouvrage;
+    //        }
+    //    }
+    //    System.out.println("Not found");
+    //    return null;
+    //}
+
+    @Override
+    public Ouvrage supprime(int cote) {
+        // recherche par cote avec linkedlist, si trouvé dire trouvé et supprimer l'objet, si non trouvé dire non trouvé et retourner null
+        for (Ouvrage ouvrage : biblioList) {
+            if (ouvrage.getCote() == cote) {
+                System.out.println("Found and book with cote " + ouvrage + " has been deleted");
+                biblioList.remove(ouvrage);
+                return ouvrage;
             }
         }
         System.out.println("Not found");
         return null;
     }
-    //toString
+
+    @Override
     public String toString() {
-        return "BiblioList [biblioList=" + biblioList + "]";
+        //retur each book in the list one by one on a new lineand the total number of books in the list
+        String str = "";
+        for (Ouvrage ouvrage : biblioList) {
+            if (ouvrage != null) {
+                str += ouvrage + "\n\n" ;
+            }
+        }
+        System.out.println("Total number of books in the list: " + biblioList.size() + "\n");
+        return str;
     }
+    
+   
     
 }
