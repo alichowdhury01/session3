@@ -2,9 +2,9 @@ import java.time.LocalDate;
 
 public class Livre extends Ouvrage {
     //Attributes
-    private String titre;
-    private String auteur;
-    private String editeur;
+    private static String titre;
+    private static String auteur;
+    private static String editeur;
 
     //Constructors
     public Livre(String titre, String auteur, String editeur, LocalDate dateEmprunt) {
@@ -37,23 +37,23 @@ public class Livre extends Ouvrage {
 
     //Setters
     public void setCote(int cote) {
-        this.cote = cote;
+        Ouvrage.cote = cote;
     }
 
     public void setTitre(String titre) {
-        this.titre = titre;
+        Livre.titre = titre;
     }
 
     public void setAuteur(String auteur) {
-        this.auteur = auteur;
+        Livre.auteur = auteur;
     }
 
     public void setEditeur(String editeur) {
-        this.editeur = editeur;
+        Livre.editeur = editeur;
     }
 
     public void setDateEmprunt(LocalDate dateEmprunt) {
-        this.dateEmprunt = dateEmprunt;
+        Livre.dateEmprunt = dateEmprunt;
     }
 
     //toString

@@ -38,7 +38,7 @@ public class CD extends Ouvrage{
     }
 
     public void setDateEmprunt(LocalDate dateEmprunt) {
-        this.dateEmprunt = dateEmprunt;
+        CD.dateEmprunt = dateEmprunt;
     }
 
     //toString

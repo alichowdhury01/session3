@@ -49,7 +49,7 @@ public class Periodique extends Ouvrage {
     }
 
     public void setDateEmprunt(LocalDate dateEmprunt) {
-        this.dateEmprunt = dateEmprunt;
+        Periodique.dateEmprunt = dateEmprunt;
     }
 
     //toString
