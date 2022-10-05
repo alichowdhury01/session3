@@ -1,35 +1,27 @@
 import java.time.LocalDate;
 
 public abstract class Ouvrage {
-    //Attributes
-    static int cote;
-    static LocalDate dateEmprunt;
+    //Attribut
+    int cote;
+    LocalDate dateEmprunt;
 
-    // Constructors
-    public Ouvrage(LocalDate dateEmprunt) {
-        cote++;
-        Ouvrage.dateEmprunt = dateEmprunt;
+    //Constructeur
+    public Ouvrage(int cote, LocalDate dateEmprunt) {
+        this.cote = cote;
+        this.dateEmprunt = dateEmprunt;
     }
 
-    // Abstract Getters 
-   
+    //Getters abstraits
+    public abstract int getCote();
     public abstract LocalDate getDateEmprunt();
 
-    public int getCote() {
-        return cote;
-    }
-
-    // Abstract Setters
-    
+    //Setters abstraits
+    public abstract void setCote(int cote);
     public abstract void setDateEmprunt(LocalDate dateEmprunt);
 
-    public void setCote(int cote) {
-        Ouvrage.cote = cote;
-    }
-
-    // Abstract toString
+    //toString abstrait
     public abstract String toString();
 
-
+    
 
 }

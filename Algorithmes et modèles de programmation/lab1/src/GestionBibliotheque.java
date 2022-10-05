@@ -2,45 +2,41 @@ import java.time.LocalDate;
 
 public class GestionBibliotheque {
     public static void main(String[] args) throws Exception {
-        
+        int cote = 0;
 
-        //creation d'un livre
-        Livre livre1 = new Livre("Le petit prince", "Antoine de Saint-Exupéry", "Gallimard", LocalDate.of(1800, 12, 12));
-        Livre livre2 = new Livre("Harry Potter", "J.K. Rowling", "Gallimard", LocalDate.of(1999, 9, 9));
-        Livre livre3 = new Livre("Le seigneur des anneaux", "J.R.R. Tolkien", "Gallimard", LocalDate.of(2009, 1, 2));
-        //creation d'un CD
-
-        //creation d'un periodique
-
-        
-
-        //creation objet BiblioListPerso
-        //BiblioListPerso biblioListPerso = new BiblioListPerso();
+        //Create a new BiblioList
         BiblioList biblioList = new BiblioList();
-        //BiblioTab biblioTab = new BiblioTab();
+
+        //Create a new Livre
+        Livre livre = new Livre("Harry Potter", "J.K. Rowling", "Bloomsbury", ++cote, LocalDate.of(2020, 12, 12));
+        Livre livre2 = new Livre("Sapiens", "Yuval Noah Harari", "HarperCollins", ++cote, LocalDate.of(2011, 2, 14));
+        Livre livre3 = new Livre("The Alchemist", "Paulo Coelho", "HarperCollins", ++cote, LocalDate.of(1988, 2, 2));
 
 
-        //biblioList 
-        biblioList.ajouter(livre1);
+        //Add the Livre to the BiblioList
+        biblioList.ajouter(livre);
         biblioList.ajouter(livre2);
         biblioList.ajouter(livre3);
-    
-        biblioList.recherche(1);
-        biblioList.recherche(3);
-       
- 
-        //biblioListPerso.recherche(3);
 
-        //biblioTab
-        //biblioTab.ajouter(livre1);
-        //biblioTab.ajouter(livre2);
+        //supprimer the Livre in the BiblioList
+        biblioList.supprimer(1);
 
-        //biblioTab.recherche(1);
+
+        //rechercher the Livre in the BiblioList
+        biblioList.rechercher(2);
+        //biblioList.rechercher(2);
+        //biblioList.rechercher(3);
+
         
-        //affichage de bibliolist
-        //System.out.println(biblioList.toString());
 
-//
+        //biblioList toString method to display the entire BiblioList in a string format with a new line after each ouvrage in the linkedlist 
+        //biblioList.toString();
+
+
+
+
+
+
       
     }
 }

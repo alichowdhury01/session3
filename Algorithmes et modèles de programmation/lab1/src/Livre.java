@@ -2,23 +2,19 @@ import java.time.LocalDate;
 
 public class Livre extends Ouvrage {
     //Attributes
-    private static String titre;
-    private static String auteur;
-    private static String editeur;
+    private String titre;
+    private String auteur;
+    private String editeur;
 
-    //Constructors
-    public Livre(String titre, String auteur, String editeur, LocalDate dateEmprunt) {
-        super(dateEmprunt);
+    //Constructeur
+    public Livre(String titre, String auteur, String editeur, int cote, LocalDate dateEmprunt) {
+        super(cote, dateEmprunt);
         this.setTitre(titre);
         this.setAuteur(auteur);
         this.setEditeur(editeur);
     }
 
     //Getters
-    public int getCote() {
-        return cote;
-    }
-
     public String getTitre() {
         return titre;
     }
@@ -31,33 +27,45 @@ public class Livre extends Ouvrage {
         return editeur;
     }
 
+    //Setters
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public void setAuteur(String auteur) {
+        this.auteur = auteur;
+    }
+
+    public void setEditeur(String editeur) {
+        this.editeur = editeur;
+    }
+
+    @Override
+    public int getCote() {
+        return cote;
+    }
+
+    @Override
     public LocalDate getDateEmprunt() {
         return dateEmprunt;
     }
 
-    //Setters
+    @Override
     public void setCote(int cote) {
-        Ouvrage.cote = cote;
+        this.cote = cote;
+        
     }
 
-    public void setTitre(String titre) {
-        Livre.titre = titre;
-    }
-
-    public void setAuteur(String auteur) {
-        Livre.auteur = auteur;
-    }
-
-    public void setEditeur(String editeur) {
-        Livre.editeur = editeur;
-    }
-
+    @Override
     public void setDateEmprunt(LocalDate dateEmprunt) {
-        Livre.dateEmprunt = dateEmprunt;
+        this.dateEmprunt = dateEmprunt;
     }
 
-    //toString
+    @Override
     public String toString() {
-        return "cote : " + cote + ",\ntitre : " + titre + ",\nauteur : " + auteur + ",\nediteur : " + editeur + ",\ndateEmprunt : " + dateEmprunt;
+        //retrun each attribute of the class Livre in a string format with a new line after each attribute 
+        return "Titre : " + titre + "\nAuteur : " + auteur + "\nEditeur : " + editeur + "\nCote : " + cote + "\nDate d'emprunt : " + dateEmprunt;
     }
+
+    
 }
