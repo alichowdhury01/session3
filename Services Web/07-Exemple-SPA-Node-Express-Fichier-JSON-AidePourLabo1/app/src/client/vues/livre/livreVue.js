@@ -30,7 +30,7 @@ const construireTR = (unLivre) =>{
 
 const lister = () => {
     let resultat = construireEntetes();
-    for(let unLivre of listeLivres){
+    for(let unLivre of listeLivres){ // unLivre est une variable locale qui vient du fichier requetesLivre.js
         resultat += construireTR(unLivre);
     }
     resultat += "</tbody></table>";

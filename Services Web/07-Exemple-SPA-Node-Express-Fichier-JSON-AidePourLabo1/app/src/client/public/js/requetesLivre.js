@@ -9,7 +9,7 @@ const chargerLivresJSON = () => {
         async: true, // false pour se  mettre en mode synchrone.
         success: (reponse) => {
             //alert(reponse);
-             listeLivres = reponse;
+             listeLivres = reponse; // listeLivres est une variable globale qui vient du fichier livreVue.js
         },
         fail: (e) => {
             alert(`Gros probléme : ${e.message}`);
